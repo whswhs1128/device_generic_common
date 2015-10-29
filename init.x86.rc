@@ -5,13 +5,13 @@ on early-init
     mount debugfs debugfs /sys/kernel/debug
     chmod 755 /sys/kernel/debug
     write /proc/sys/kernel/ctrl-alt-del 1
-
+    export MESA_DEBUG 1
     write /sys/module/xt_qtaguid/parameters/ctrl_write_limited N
-
+    export MESA_LOG_FILE /data/mesa.txt
     export force_s3tc_enable true
     export EGL_LOG_LEVEL info
-#   export EGL_DRIVERS egl_dri2
-
+    export LIBGL_DEBUG 1
+    export INTEL_DEBUG tex,state,blit,miptree,pix,buf,fbo,dri,clip,blorp
 on init
     mkdir /mnt/shell/emulated 0700 shell shell
     mkdir /storage/emulated 0555 root root
