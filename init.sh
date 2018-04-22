@@ -152,6 +152,12 @@ function init_hal_gralloc()
 			if [ "$HWCOMP" == "1" ]; then
 				set_property ro.hardware.hwcomposer drm
 				set_property ro.hardware.gralloc gbm
+			elif [ "$HWCOMP" == "2" ]; then
+				set_property ro.hardware.hwcomposer fdo
+				set_property ro.hardware.gralloc robh
+			elif [ "$HWCOMP" == "2robh" ]; then
+				set_property ro.hardware.hwcomposer robh
+				set_property ro.hardware.gralloc robh
 			else
 				set_property ro.hardware.gralloc drm
 				set_drm_mode
