@@ -10,7 +10,7 @@
 
 PRODUCT_PACKAGES := \
     hwcomposer.drm  \
-    gralloc.drm     \
+    gralloc.drm modetest proptest \
     gralloc.gbm     \
     libGLES_mesa    \
     libtxc_dxtn     \
